@@ -1,4 +1,4 @@
-module GitHub.com/matkinhig/go-digital
+module github.com/matkinhig/go-digital
 
 go 1.13
 
