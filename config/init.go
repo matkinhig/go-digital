@@ -11,7 +11,7 @@ var Config Schema
 
 type Schema struct {
 	OracleDB struct {
-		Uri string `mapstructure:"Uri"`
+		Uri      string `mapstructure:"Uri"`
 		Host     string `mapstructure:"Host"`
 		Username string `mapstructure:"User"`
 		Password string `mapstructure:"Password"`
