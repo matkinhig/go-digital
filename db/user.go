@@ -29,5 +29,5 @@ func GetAllUsers() (*[]types.EUsers{}, error) {
 		sUsers = append(sUsers, us)
 	}
 	fmt.Println(sUsers[1])
-	return sUsers, err
+	return (sUsers, err)
 }

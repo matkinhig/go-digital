@@ -9,7 +9,6 @@ import (
 func main() {
 	fmt.Println("Start Golang")
 	fmt.Println(config.Config)
-	s, err := db.GetAllUsers()
-	fmt.Println(err)
+	s := db.GetAllUsers()
 	fmt.Println(s)
 }
