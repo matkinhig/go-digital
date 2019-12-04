@@ -1,6 +1,7 @@
 package db
 
 import (
+	"context"
 	"fmt"
 	"log"
 
@@ -30,4 +31,24 @@ func GetAllUsers() *[]types.EUsers {
 	}
 	fmt.Println(sUsers[1])
 	return &sUsers
+}
+
+func MappingUser() {
+	fmt.Println("Start querry all users")
+	db, err := config.InitDB()
+	if err != nil {
+		panic(err)
+	}
+	rows, err := db.QueryContext(context.TODO(), "select * from halong.ibkeusers")
+	if err != nil {
+		panic(err)
+	}
+	filter := map[string]interface{}{}
+	for rows.Next() {
+		err = rows.Scan(&filter)
+		if err != nil {
+			panic(err)
+		}
+	}
+	fmt.Println(filter)
 }
