@@ -8,15 +8,15 @@ import (
 	"github.com/go-xorm/xorm"
 )
 
-type User struct {
-    Id int64
-    Name string
-    Salt string
-    Age int
-    Passwd string `xorm:"varchar(200)"`
-    Created time.Time `xorm:"created"`
-    Updated time.Time `xorm:"updated"`
-}
+// type User struct {
+//     Id int64
+//     Name string
+//     Salt string
+//     Age int
+//     Passwd string `xorm:"varchar(200)"`
+//     Created time.Time `xorm:"created"`
+//     Updated time.Time `xorm:"updated"`
+// }
 
 func main() {
 	fmt.Println("Start Golang")
@@ -32,8 +32,11 @@ func testXORM() {
 	if err != nil {
 		panic(err)
 	}
-	err := engine.Sync2(new(User))
 	results, err := engine.Query("select * from ibkeusers")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(results)
 
 }
 
