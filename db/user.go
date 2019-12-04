@@ -8,7 +8,7 @@ import (
 	"github.com/matkinhig/go-digital/types"
 )
 
-func GetAllUsers() []types.EUsers {
+func GetAllUsers() (*[]types.EUsers, error) {
 	fmt.Println("Start querry all users")
 	db, err := config.InitDB()
 	if err != nil {
@@ -18,7 +18,7 @@ func GetAllUsers() []types.EUsers {
 	if err != nil {
 		panic(err)
 	}
-	sUsers := []types.EUsers{}
+	var sUsers []types.EUsers
 	for rows.Next() {
 		s := types.EUsers{}
 		err = rows.Scan(&s.EUSERID, &s.KHID, &s.TENTRUYCAP, &s.MATKHAU, &s.KHOA, &s.THOIGIANKHOA, &s.TRUYCAPGANNHAT, &s.DATELASTMAINT, &s.NOTE, &s.KHID_FBE)
@@ -29,5 +29,5 @@ func GetAllUsers() []types.EUsers {
 		sUsers = append(sUsers, s)
 	}
 	fmt.Println(sUsers[1])
-	return sUsers
+	return &sUsers, nil
 }
