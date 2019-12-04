@@ -1,13 +1,13 @@
 OracleDB:
-    Uri: matkinhig/Corefbe123456@103.74.116.95:1521/corefbe
-    Host: 103.74.116.95:1521/corefbe
-    User: matkinhig
-    Password: Corefbe123456
+    # Uri: matkinhig/Corefbe123456@103.74.116.95:1521/corefbe
+    # Host: 103.74.116.95:1521/corefbe
+    # User: matkinhig
+    # Password: Corefbe123456
 
-    # Uri: USER_NHS/nhsVB123456@192.168.254.34:1521/tcbsweb
-    # Host: 192.168.254.34:1521/tcbsweb
-    # User: USER_NHS
-    # Password: nhsVB123456
+    Uri: USER_NHS/nhsVB123456@192.168.254.34:1521/tcbsweb
+    Host: 192.168.254.34:1521/tcbsweb
+    User: USER_NHS
+    Password: nhsVB123456
 
 Encrypt:
     Secret: my-secret

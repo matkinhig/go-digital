@@ -8,7 +8,7 @@ import (
 	"github.com/matkinhig/go-digital/types"
 )
 
-func GetAllUsers() (*[]types.EUsers, error) {
+func GetAllUsers() *[]types.EUsers {
 	fmt.Println("Start querry all users")
 	db, err := config.InitDB()
 	if err != nil {
@@ -29,5 +29,5 @@ func GetAllUsers() (*[]types.EUsers, error) {
 		sUsers = append(sUsers, s)
 	}
 	fmt.Println(sUsers[1])
-	return &sUsers, nil
+	return &sUsers
 }
